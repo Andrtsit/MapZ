@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(180deg, green, blue);
+  overflow: hidden;
+}
+
+main {
+  height: 90vh;
+  width: 95vw;
+  background-color: #222;
+  display: flex;
+  border-radius: 0.8rem;
+  box-shadow: 0 1.5rem 2rem rgba(34, 34, 34, 0.8);
+  overflow: hidden;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10rem;
+  width: 20%;
+  overflow: hidden;
+}
+aside #inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+aside #front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+aside #back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, black, white);
+  transform: rotateY(180deg);
+}
+aside .flip {
+  transform: rotateY(180deg);
+}
+aside #img-container {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  margin-top: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+aside #img-container #logo {
+  height: 40%;
+}
+aside #img-container h2 {
+  font-size: 3rem;
+  color: #eee;
+}
+aside #img-container input {
+  padding: 1.5rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  border: none;
+}
+aside #img-container input:focus {
+  outline: none;
+}
+aside #img-container input:focus::placeholder {
+  color: transparent;
+}
+aside #weather {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+aside #weather .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  height: 90%;
+  width: 90%;
+}
+aside #weather .info-weather {
+  margin: 1.5rem;
+  color: #eee;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+}
+aside #back {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+#map {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+#map:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

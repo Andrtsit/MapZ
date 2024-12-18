@@ -1,0 +1,22 @@
+{
+  "name": "mapz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "compile:sass": "sass styles/main.scss styles/styles.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrtsit/MapZ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andrtsit/MapZ/issues"
+  },
+  "homepage": "https://github.com/Andrtsit/MapZ#readme",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

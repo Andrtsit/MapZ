@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script type="module" src="app.js"></script>
+    <title>Mapz</title>
+  </head>
+  <body>
+    <main>
+      <aside>
+        <div id="inner">
+          <div id="front">
+            <div id="img-container">
+              <h2>Simple Weather App</h2>
+              <img src="icon.png" alt="" id="logo" />
+              <form action="submit" id="form">
+                <input
+                  type="text"
+                  id="input-city"
+                  placeholder="Search for a city!"
+                />
+              </form>
+            </div>
+            <div id="weather">
+              <div class="grid">
+                <div class="info-weather">
+                  <p>Humidity</p>
+                  <p id="humidity">5</p>
+                </div>
+                <div class="info-weather">
+                  <p>Temperature</p>
+                  <p id="temperature">5</p>
+                </div>
+                <div class="info-weather">
+                  <p>Wind</p>
+                  <p id="wind">5</p>
+                </div>
+                <div class="info-weather">
+                  <p>Feellike</p>
+                  <p id="feelslike">5</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="back"></div>
+        </div>
+      </aside>
+      <div id="map"></div>
+    </main>
+  </body>
+</html>
