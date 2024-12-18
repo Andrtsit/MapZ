@@ -1,24 +1,26 @@
 const app = function () {
   const form = document.querySelector("#form");
   const usersInput = document.querySelector("#input-city");
-  const inner = document.querySelector("#inner");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let feelslike = document.querySelector("#feelslike");
   let temperature = document.querySelector("#temperature");
+  let country = document.querySelector("#country");
+  let city = document.querySelector("#city");
+  let time = document.querySelector("#time");
+  let date = document.querySelector("#date");
   let map;
   const zoomMap = 10;
 
-  const changeMode = function (e) {
-    e.preventDefault();
-    inner.classList.toggle("flip");
-  };
-
   const renderData = function (obj) {
-    humidity.textContent = obj.humidity.toString();
-    wind.textContent = obj.wind.toString();
-    temperature.textContent = obj.temperature.toString();
-    feelslike.textContent = obj.feelslike.toString();
+    country.textContent = obj.country;
+    city.textContent = obj.city;
+    time.textContent = obj.time;
+    date.textContent = obj.date;
+    temperature.textContent = obj.temperature;
+    feelslike.textContent = obj.feelslike;
+    humidity.textContent = obj.humidity;
+    wind.textContent = obj.wind;
   };
 
   const changePlace = async function (e) {
@@ -33,9 +35,12 @@ const app = function () {
         `http://api.weatherapi.com/v1/current.json?key=4887801d6c2b40a08fd202818241712&q=${city}&aqi=no`
       );
       const data = await response.json();
+
       const objFromData = {
         country: data.location.country,
-        name: data.location.name,
+        city: data.location.name,
+        date: data.current.last_updated.split(" ")[0],
+        time: data.current.last_updated.split(" ")[1],
         temperature: data.current.temp_c,
         feelslike: data.current.feelslike_c,
         wind: data.current.wind_kph,
