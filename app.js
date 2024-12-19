@@ -32,7 +32,7 @@ const app = function () {
       usersInput.value = "";
       // FETCHING DATA FOR THE INPUTED CITY
       const response = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=4887801d6c2b40a08fd202818241712&q=${city}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=4887801d6c2b40a08fd202818241712&q=${city}&aqi=no`
       );
       const data = await response.json();
 
