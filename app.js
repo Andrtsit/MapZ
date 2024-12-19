@@ -11,6 +11,8 @@ const app = function () {
   let date = document.querySelector("#date");
   let map;
   const zoomMap = 10;
+  const defaultLat = 50.833;
+  const defaultLon = 4.333;
 
   const renderData = function (obj) {
     country.textContent = obj.country;
@@ -47,7 +49,7 @@ const app = function () {
         humidity: data.current.humidity,
         coords: [data.location.lat, data.location.lon],
       };
-
+      console.log(objFromData.coords);
       // MOVE MAP TO THE DESIRED INPUT
       map.setView(objFromData.coords, zoomMap);
 
@@ -68,6 +70,7 @@ const app = function () {
       // GETING GEOLOCATION COORDINATES
       const { latitude, longitude } = position.coords;
       // RENDER MAP
+
       map = L.map("map").setView([latitude, longitude], zoomMap);
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 15,
@@ -89,6 +92,13 @@ const app = function () {
 
     function () {
       alert("Geolocation not supported or declined permission");
+      map = L.map("map").setView([defaultLat, defaultLon], zoomMap);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 15,
+        attribution:
+          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+      form.addEventListener("submit", changePlace);
     }
   );
 };
