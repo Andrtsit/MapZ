@@ -16,11 +16,11 @@ const app = function () {
     country.textContent = obj.country;
     city.textContent = obj.city;
     time.textContent = obj.time;
-    date.textContent = obj.date;
-    temperature.textContent = obj.temperature;
-    feelslike.textContent = obj.feelslike;
-    humidity.textContent = obj.humidity;
-    wind.textContent = obj.wind;
+    date.textContent = obj.date.split("-").reverse().join("-");
+    temperature.textContent = obj.temperature + "°C";
+    feelslike.textContent = obj.feelslike + "°C";
+    humidity.textContent = obj.humidity + "%";
+    wind.textContent = obj.wind + "kph";
   };
 
   const changePlace = async function (e) {
@@ -50,6 +50,11 @@ const app = function () {
 
       // MOVE MAP TO THE DESIRED INPUT
       map.setView(objFromData.coords, zoomMap);
+
+      // RENDER MARK
+      L.marker(objFromData.coords).addTo(map);
+      // .bindPopup("A pretty CSS popup.<br> Easily customizable.")
+      // .openPopup();
       // RENDER DATA FROM AN OBJECT
       renderData(objFromData);
     } catch (err) {

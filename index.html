@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="/img-icons/icon.png" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -18,14 +19,14 @@
       crossorigin=""
     ></script>
     <script type="module" src="app.js"></script>
-    <title>Mapz</title>
+    <title>MapZ</title>
   </head>
   <body>
     <main>
       <aside>
         <section id="img-container">
-          <h2>Simple Weather App</h2>
-          <img src="icon.png" alt="" id="logo" />
+          <h2>Typical weather App</h2>
+          <img src="/img-icons/icon.png" alt="" id="logo" />
           <form action="submit" id="form">
             <input
               type="text"
@@ -35,22 +36,14 @@
           </form>
         </section>
         <section id="weather">
-          <div class="infos">
-            <p><span id="city"></span></p>
-            <p><span id="country"></span></p>
-          </div>
-          <div class="infos">
-            <p><span id="date"></span></p>
-            <p><span id="time"></span></p>
-          </div>
-          <div class="infos">
-            <p><span id="temperature"></span></p>
-            <p><span id="feelslike"></span></p>
-          </div>
-          <div class="infos">
-            <p><span id="humidity"></span></p>
-            <p><span id="wind"></span></p>
-          </div>
+          <div class="infos">City : <span id="city"></span></div>
+          <div class="infos">Country : <span id="country"></span></div>
+          <div class="infos">Date : <span id="date"></span></div>
+          <div class="infos">Local Time : <span id="time"></span></div>
+          <div class="infos">Temperature : <span id="temperature"></span></div>
+          <div class="infos">Real Feel : <span id="feelslike"></span></div>
+          <div class="infos">Humidity<span id="humidity"></span></div>
+          <div class="infos">Wind : <span id="wind"></span></div>
         </section>
       </aside>
       <div id="map"></div>
