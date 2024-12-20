@@ -21,15 +21,15 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: rgba(#3ebedf, 0.8);
+  background-color: rgba(#444, 0.8);
 }
 
 main {
   height: 90vh;
   width: 95vw;
   display: flex;
-  border-radius: 0.8rem;
-  box-shadow: 0 1.5rem 2rem rgba($color-black, 0.8);
+  border-radius: 1rem;
+  box-shadow: 0 2rem 2rem rgba($color-black, 0.8);
   overflow: hidden;
 }
 
