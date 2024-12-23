@@ -91,6 +91,7 @@ const addHandlers = function () {
 // GETING SEARCH HISTORY FROM LOCALSTORAGE AND ADD MARKERS
 const getDataLocal = function () {
   const data = JSON.parse(localStorage.getItem("city"));
+  if (!data) return;
   searchHistory = data;
   console.log(searchHistory);
   searchHistory.forEach((obj) => {
